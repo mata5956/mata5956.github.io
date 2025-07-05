@@ -324,32 +324,75 @@ DISM /Online /Cleanup-Image /RestoreHealth </p>
 
 
 <!-- Chat System -->
+<style>
+  #chat-container {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #f0f0f0;
+  }
+
+  #chat-messages {
+    height: 250px;
+    overflow-y: auto;
+    background: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  #chat-messages div {
+    margin-bottom: 6px;
+  }
+
+  #chat-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+</style>
+
 <div id="chat-container">
   <div id="chat-messages"></div>
-  <input id="chat-input" placeholder="Type a message..." />
+  <input id="chat-input" type="text" placeholder="Type a message..." autocomplete="off" />
 </div>
 
 <script>
   const input = document.getElementById('chat-input');
   const messages = document.getElementById('chat-messages');
 
-  // Use localStorage to persist messages
+  // Get or prompt for username
+  let username = localStorage.getItem('chat_username');
+  if (!username) {
+    username = prompt("Enter your username:") || "Guest";
+    localStorage.setItem('chat_username', username);
+  }
+
+  // Load previous messages
   const storedMessages = JSON.parse(localStorage.getItem('chat_log') || '[]');
   storedMessages.forEach(msg => {
     const div = document.createElement('div');
-    div.textContent = msg;
+    div.innerHTML = `<strong>${msg.user}:</strong> ${msg.text}`;
     messages.appendChild(div);
   });
 
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && input.value.trim() !== '') {
-      const message = input.value.trim();
+      const messageText = input.value.trim();
+      const messageObj = { user: username, text: messageText };
+
       const div = document.createElement('div');
-      div.textContent = message;
+      div.innerHTML = `<strong>${username}:</strong> ${messageText}`;
       messages.appendChild(div);
 
-      // Save to localStorage
-      storedMessages.push(message);
+      storedMessages.push(messageObj);
       localStorage.setItem('chat_log', JSON.stringify(storedMessages));
 
       input.value = '';
