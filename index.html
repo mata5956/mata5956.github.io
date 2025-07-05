@@ -46,52 +46,7 @@
     margin-top: 8px;
     margin-bottom: 12px;
   }
-  /* Chat styles */
-  #chat-container {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 320px;
-    max-height: 400px;
-    background: white;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    z-index: 9999;
-  }
-  #chat-messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    border-bottom: 1px solid #ddd;
-  }
-  #chat-input-container {
-    display: flex;
-  }
-  #chat-input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    font-size: 14px;
-  }
-  #chat-send-btn {
-    background: #007bff;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  #chat-send-btn:hover {
-    background: #0056b3;
-  }
 </style>
-
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
 </head>
 <body>
 
@@ -115,11 +70,12 @@
   <summary>Battleye “found bad software” fix</summary>
   <p>Open the task manager app on your pc from windows.</p>
 
-<p>Press the arrow that gives you access to advanced options.</p>
+Press the arrow that gives you access to advanced options.</p>
 
-<p>Scroll through and close all Rainbow Six Siege processes and all BattlEye processes.</p>
+Scroll through and close all Rainbow Six Siege processes and all BattlEye processes.</p>
 
-<p>Restart injection process from the beginning.<br />Or just restart your pc</p>
+Restart injection process from the beginning.
+Or just restart your pc</p>
 </details>
 
 <details>
@@ -133,104 +89,159 @@
   </ul>
 </details>
 
-<!-- (rest of your details tags omitted here for brevity, but all remain exactly as you sent them) -->
-
-<!-- Put all your other <details> blocks exactly as above, unchanged -->
-
 <details>
-  <summary>Kernaim Menu Not Clickable – Fix</summary>
-  <p><strong>100% Working Fix Steps:</strong></p>
-  <ol>
-    <li><strong>Ensure Proper Display Mode:</strong><br />
-      Set the game to <em>Windowed Borderless</em>, not Fullscreen.
-    </li>
-    <li><strong>Disable Windows Defender Completely:</strong><br />
-      Follow both Step 1 & 2 from this guide: 
-      <a href="https://ash-carpenter-638.notion.site/How-to-disable-Windows-Defender-guide-13678f2021f68054b273dfc260ff6a70" target="_blank" rel="noopener noreferrer">Disable Defender Guide</a><br />
-      Use <a href="https://gofile.io/d/nWnp0K" target="_blank" rel="noopener noreferrer">Defender Control Tool</a> to help.
-    </li>
-    <li><strong>Turn Off Overlays:</strong><br />
-      Disable Discord overlay, Steam overlay, and NVIDIA/AMD overlays (via respective apps).
-    </li>
-    <li><strong>Turn Off System Features:</strong>
-      <ul>
-        <li>GPU Acceleration</li>
-        <li>Xbox Game Bar</li>
-        <li>Windows Game Mode</li>
-        <li>Core Isolation &gt; Memory Integrity</li>
-        <li>Secure Boot (via BIOS)</li>
-        <li><a href="https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-on-Windows-10" target="_blank" rel="noopener noreferrer">Fast Startup (Disable Fast Startup)</a></li>
-      </ul>
-    </li>
-    <li><strong>Update Drivers & Windows:</strong><br />
-      Update GPU drivers.<br />
-      Make sure Windows is fully updated.
-    </li>
-  </ol>
-  <p><strong>Finally:</strong> Reboot your PC after doing all of the above and try launching the loader again.</p>
+  <summary>R6 Prime info</summary>
+  <p>when its r6 prime insert doesnt exist, the menu is webbased link in the guide</p>
 </details>
 
-<!-- Chat UI -->
-<div id="chat-container">
-  <div id="chat-messages"></div>
-  <div id="chat-input-container">
-    <input id="chat-input" type="text" placeholder="Say something..." autocomplete="off" />
-    <button id="chat-send-btn">Send</button>
-  </div>
-</div>
+<details>
+  <summary>Refund store credit info</summary>
+  <p>thats only the refund store credit, you can't add money there</p>
+</details>
 
-<script>
-  // Firebase config - replace with your own if needed
-  const firebaseConfig = {
-    apiKey: "AIzaSyCEcv9b7-o9RatfVGVotYUUfBsFDQb_O6Q",
-    authDomain: "mychat-de256.firebaseapp.com",
-    projectId: "mychat-de256",
-    storageBucket: "mychat-de256.firebasestorage.app",
-    messagingSenderId: "138069754758",
-    appId: "1:138069754758:web:314b70e3b1a8029f81e207",
-    measurementId: "G-JRBYW89BXK"
-  };
+<details>
+  <summary>Fix Core Isolation & Memory Integrity issues</summary>
+  <p>Go into Core Isolation inside of Windows Security and disable memory integrity and Microsoft vulnerable driver blocklist.<br />
+  Then restart your PC and try injection.<br />
+  (This helps if “driver initialization error 1” crashes before injection.)</p>
+</details>
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+<details>
+  <summary>Chairs false flagged by antivirus</summary>
+  <p>This is due to manipulating memory.<br />
+  If someone asks why cheat is flagged as virus, this is the reason.</p>
+</details>
 
-  const chatMessages = document.getElementById('chat-messages');
-  const chatInput = document.getElementById('chat-input');
-  const chatSendBtn = document.getElementById('chat-send-btn');
+<details>
+  <summary>Fix EFI error</summary>
+  <p>Go to BIOS → switch to UEFI boot.<br />
+  You might need to reinstall Windows or try <code>mbr2gpt</code> if possible.</p>
+</details>
 
-  // Listen for new messages and update UI
-  db.collection('messages')
-    .orderBy('timestamp')
-    .limit(100)
-    .onSnapshot(snapshot => {
-      chatMessages.innerHTML = '';
-      snapshot.forEach(doc => {
-        const msg = doc.data();
-        const msgElem = document.createElement('div');
-        msgElem.textContent = `${msg.user}: ${msg.text}`;
-        chatMessages.appendChild(msgElem);
-      });
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    });
+<details>
+  <summary>No ESP showing fix</summary>
+  <p>Make sure game is on borderless mode.<br />
+  If still nothing, reinject the loader.</p>
+</details>
 
-  // Send message function
-  function sendMessage() {
-    const text = chatInput.value.trim();
-    if (!text) return;
-    db.collection('messages').add({
-      user: 'Guest', // Change this if you add auth later
-      text: text,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    });
-    chatInput.value = '';
-  }
+<details>
+  <summary>Key not working? What to do</summary>
+  <p>tag maddy/arctic and tell them to wait after sending proof of purchase.</p>
+  ask for the username on website </p>
+  show proof the key not working </p>
+</details>
 
-  chatSendBtn.addEventListener('click', sendMessage);
-  chatInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') sendMessage();
-  });
-</script>
+<details>
+  <summary>MyLoader.cc web doesn't work</summary>
+  <p>Use <code>!warp</code> if possible.</p>
+</details>
 
-</body>
-</html>
+<details>
+  <summary>Enable Hyper-V</summary>
+  <ol>
+    <li>Search "Turn Windows features on or off"</li>
+    <li>Check Hyper-V (Management Tools + Platform)</li>
+    <li>Click OK and restart PC</li>
+  </ol>
+  <p>This fixes: Hypervisor not set up / error code 2</p>
+</details>
+
+<details>
+  <summary>Windows 10 Home lacks Hyper-V</summary>
+  <p>Upgrade to Pro or use VirtualBox/VMware instead.</p>
+</details>
+
+<details>
+  <summary>Is Hyper-V required for Arcane?</summary>
+  <p>Yes.</p>
+</details>
+
+<details>
+  <summary>Fix C++ redistributable issues</summary>
+  <p><a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170" target="_blank" rel="noopener noreferrer">Latest supported Visual C++ Redistributable downloads</a></p>
+</details>
+
+<details>
+  <summary>Cheats stopped working but menu shows</summary>
+  <p>!build (and provide the key)</p>
+</details>
+
+<details>
+  <summary>File flagged while downloading</summary>
+  <p>Use Microsoft Edge to download.<br />
+  After clicking the 3 dots on the download, find the file on downloads tab, click 3 dots next to the file, then click “Download suspicious file.”</p>
+</details>
+
+<details>
+  <summary>Uninstall problematic Windows updates</summary>
+  <p>Try uninstalling the latest Windows updates causing issues.<br />
+  If they keep reinstalling, consider clean installing Windows 10 for best compatibility.</p>
+</details>
+
+<details>
+  <summary>Prime Infinite loader issue</summary>
+  <p>If Prime Infinite loader page doesn’t load, use <code>!warp</code>.</p>
+</details>
+
+<details>
+  <summary>UEFI boot not available</summary>
+  <p>Change BIOS settings to UEFI boot.</p>
+</details>
+
+
+<details>
+  <summary>How to solve “Close BattlEye and start again” error</summary>
+  <p>Open the task manager app on your PC from Windows.<br />
+  Press the arrow that gives you access to advanced options.<br />
+  Scroll through and close all Rainbow Six Siege processes and all BattlEye processes.<br />
+  Restart injection process from the beginning.<br />
+  Or just restart your PC.</p>
+</details>
+<details>
+  <summary>How to Fix Inferno Crashing Issues</summary>
+  <p>Make sure your game is borderless. If it wasn’t restart injection process and try again.</p>
+
+If that doesn't work then disable virtuilzation via bios.</p>
+
+If this doesn’t work make sure your pc has secure boot off. (use !secureboot for a tutorial)</p>
+
+If none of this works run cmd as admin and run this command
+sfc /scannow
+After that, run the following command
+DISM /Online /Cleanup-Image /RestoreHealth.</p>
+  
+</details>
+<details>
+  <summary>This error unrelated to product — bo6 HILLCAT</summary>
+  <p>This error shouldn’t have anything to do with our product.<br />
+  Try following this YouTube guide to resolve it:<br />
+  <a href="https://youtu.be/48QCwGlD1c4?si=aV4xuYuUMoH16sHF" target="_blank" rel="noopener noreferrer">https://youtu.be/48QCwGlD1c4?si=aV4xuYuUMoH16sHF</a></p>
+</details>
+<details>
+    <summary>"failed to map memory"</summary>
+  <p>disable all startup apps<br />
+    if not working, check task manager, go to performance, and then send a screenshot of your memory tab</p>
+  </details>
+  <details>
+    <summary>How to check if disk format is GPT or MBR:</summary>
+  <p>Open cmd prompt as admin<br />
+    Type in diskpart/p> 
+
+Then type in list disk/p>
+
+If there is an Asterisk (*) below GPT it means that the format is GPT, if empty it means MBR</p>
+    (this is to see if the user can switch to UEFI mode)</p>
+    </details>
+ <details>
+    <summary>stuck on getting session dataon the menu (r6 prime)</summary>
+  <p>!supporttool<br />
+    Type in diskpart/p> 
+restart pc and reinject</p>
+</details>
+ <details>
+    <summary>How to force enable virtuilzation - by the legend klaus</summary>
+  <p>1) Make sure virtuilzation is enabled in bios<br />
+    2) Press Win + R and then type in msinfo32 and look at the virt state </p> 
+3) Win + r type in gpedit.msc, Computer config > Administrative templates > System > Press on devide guard > Double click on "Turn on virt based security"  and press on "Enable" at the top</p>
+4) open regedit (as admin) > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard, double click on "EnableVirtuilzation" and set the value to 1</p>
+5) Restart pc and everything should work.</p
