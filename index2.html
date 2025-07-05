@@ -319,27 +319,23 @@ DISM /Online /Cleanup-Image /RestoreHealth </p>
   <p><strong>Finally:</strong> Reboot your PC after doing all of the above and try launching the loader again.</p>
 </details>
 
-<div id="chat-container">
-  <div id="chat-messages"></div>
-  <input id="chat-input" type="text" placeholder="Say something..." autocomplete="off" />
-</div>
+
+
 
 <script>
   const input = document.getElementById('chat-input');
   const messages = document.getElementById('chat-messages');
 
-  // Get or prompt for username
   let username = localStorage.getItem('chat_username');
   if (!username) {
     username = prompt("Enter your username:") || "Guest";
     localStorage.setItem('chat_username', username);
   }
 
-  // Load previous messages
   const storedMessages = JSON.parse(localStorage.getItem('chat_log') || '[]');
   storedMessages.forEach(msg => {
     const div = document.createElement('div');
-    div.innerHTML = `<strong>${msg.user}:</strong> ${msg.text}`;
+    div.textContent = `${msg.user}: ${msg.text}`;
     messages.appendChild(div);
   });
 
@@ -348,12 +344,10 @@ DISM /Online /Cleanup-Image /RestoreHealth </p>
       const messageText = input.value.trim();
       const messageObj = { user: username, text: messageText };
 
-      // Append message div
       const div = document.createElement('div');
-      div.innerHTML = `<strong>${username}:</strong> ${messageText}`;
+      div.textContent = `${username}: ${messageText}`;
       messages.appendChild(div);
 
-      // Save message in localStorage
       storedMessages.push(messageObj);
       localStorage.setItem('chat_log', JSON.stringify(storedMessages));
 
@@ -362,6 +356,8 @@ DISM /Online /Cleanup-Image /RestoreHealth </p>
     }
   });
 </script>
+
+
 
 </body>
 </html>
