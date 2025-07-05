@@ -46,9 +46,54 @@
     margin-top: 8px;
     margin-bottom: 12px;
   }
+
+  /* Chat box on top styles */
+  #chat-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+    color: #eee;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999;
+  }
+  #chat-container input[type="text"] {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1em;
+  }
+  #chat-container button {
+    background: #1890ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #chat-container button:hover {
+    background: #1070d0;
+  }
+
+  /* Push body content down to not hide behind chat */
+  body {
+    padding-top: 60px; /* enough space for chat container */
+  }
 </style>
 </head>
 <body>
+
+<!-- Chat box on top -->
+<div id="chat-container">
+  <input type="text" placeholder="Say something..." />
+  <button>Send</button>
+</div>
 
 <h1>How to Fix “Driver Initialization Error 1” and Other Common Issues</h1>
 
@@ -70,12 +115,12 @@
   <summary>Battleye “found bad software” fix</summary>
   <p>Open the task manager app on your pc from windows.</p>
 
-Press the arrow that gives you access to advanced options.</p>
+  <p>Press the arrow that gives you access to advanced options.</p>
 
-Scroll through and close all Rainbow Six Siege processes and all BattlEye processes.</p>
+  <p>Scroll through and close all Rainbow Six Siege processes and all BattlEye processes.</p>
 
-Restart injection process from the beginning.
-Or just restart your pc</p>
+  <p>Restart injection process from the beginning.
+  Or just restart your pc</p>
 </details>
 
 <details>
@@ -201,14 +246,14 @@ Or just restart your pc</p>
   <summary>How to Fix Inferno Crashing Issues</summary>
   <p>Make sure your game is borderless. If it wasn’t restart injection process and try again.</p>
 
-If that doesn't work then disable virtuilzation via bios.</p>
+  <p>If that doesn't work then disable virtuilzation via bios.</p>
 
-If this doesn’t work make sure your pc has secure boot off. (use !secureboot for a tutorial)</p>
+  <p>If this doesn’t work make sure your pc has secure boot off. (use !secureboot for a tutorial)</p>
 
-If none of this works run cmd as admin and run this command
-sfc /scannow
-After that, run the following command
-DISM /Online /Cleanup-Image /RestoreHealth.</p>
+  <p>If none of this works run cmd as admin and run this command
+  sfc /scannow
+  After that, run the following command
+  DISM /Online /Cleanup-Image /RestoreHealth.</p>
   
 </details>
 <details>
@@ -250,41 +295,41 @@ restart pc and reinject</p>
     <summary>Omega Apex – "Failed to map memory(0)" Fix</summary>
   <p>Disable all Startup Apps:</p>
 
-Open Startup Apps → Disable everything.</p>
+  <p>Open Startup Apps → Disable everything.</p>
 
-Restart PC</p>
+  <p>Restart PC</p>
 
-Open Task Manager → Make sure RAM usage is under ~30% idle.</p>
+  <p>Open Task Manager → Make sure RAM usage is under ~30% idle.</p>
 
-If idle RAM is too high (like 50%+), close background apps or upgrade RAM (12GB is minimum; 8GB usually causes issues).</p>
+  <p>If idle RAM is too high (like 50%+), close background apps or upgrade RAM (12GB is minimum; 8GB usually causes issues).</p>
 
-Reinject after full reboot with nothing else running.</p>
+  <p>Reinject after full reboot with nothing else running.</p>
 </details>
 <details>
   <summary>game crashes with inferno</summary>
   <p>make sure to first disable gadget esp,see if that works</p>
   <p>Make sure your game is borderless. If it wasn’t restart injection process and try again.</p>
 
-If that doesn't work do the following:
-Run CMD as admin
-Paste this command: bcdedit /set hypervisorlaunchtype off
-Restart your pc and try again</p>
+  <p>If that doesn't work do the following:
+  Run CMD as admin
+  Paste this command: bcdedit /set hypervisorlaunchtype off
+  Restart your pc and try again</p>
 
-If this doesn’t work make sure your pc has secure boot off. (use !secureboot for a tutorial)</p></p>
+  <p>If this doesn’t work make sure your pc has secure boot off. (use !secureboot for a tutorial)</p>
 
-if that doesn't work disable your virtualization. (use !virtualization for a tutorial)</p></p></p>
+  <p>if that doesn't work disable your virtualization. (use !virtualization for a tutorial)</p>
 
-If none of this works run cmd as admin and run this command
-sfc /scannow
-After that, run the following command
-DISM /Online /Cleanup-Image /RestoreHealth</p>
+  <p>If none of this works run cmd as admin and run this command
+  sfc /scannow
+  After that, run the following command
+  DISM /Online /Cleanup-Image /RestoreHealth</p>
 
-If this doesn’t work make sure your pc has secure boot off. (use !secureboot for a tutorial)</p>
+  <p>If this doesn’t work make sure your pc has secure boot off. (use !secureboot for a tutorial)</p>
 
-If none of this works run cmd as admin and run this command
-sfc /scannow
-After that, run the following command
-DISM /Online /Cleanup-Image /RestoreHealth </p>
+  <p>If none of this works run cmd as admin and run this command
+  sfc /scannow
+  After that, run the following command
+  DISM /Online /Cleanup-Image /RestoreHealth </p>
 </details>
 <details>
   <summary>Kernaim Menu Not Clickable – Fix</summary>
@@ -318,88 +363,6 @@ DISM /Online /Cleanup-Image /RestoreHealth </p>
   </ol>
   <p><strong>Finally:</strong> Reboot your PC after doing all of the above and try launching the loader again.</p>
 </details>
-
-</body>
-</html>
-
-
-<!-- Chat System -->
-<style>
-  #chat-container {
-    margin-top: 30px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #f0f0f0;
-  }
-
-  #chat-messages {
-    height: 250px;
-    overflow-y: auto;
-    background: #fff;
-    padding: 8px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-
-  #chat-messages div {
-    margin-bottom: 6px;
-  }
-
-  #chat-input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-  }
-</style>
-
-<div id="chat-container">
-  <div id="chat-messages"></div>
-  <input id="chat-input" type="text" placeholder="Type a message..." autocomplete="off" />
-</div>
-
-<script>
-  const input = document.getElementById('chat-input');
-  const messages = document.getElementById('chat-messages');
-
-  // Get or prompt for username
-  let username = localStorage.getItem('chat_username');
-  if (!username) {
-    username = prompt("Enter your username:") || "Guest";
-    localStorage.setItem('chat_username', username);
-  }
-
-  // Load previous messages
-  const storedMessages = JSON.parse(localStorage.getItem('chat_log') || '[]');
-  storedMessages.forEach(msg => {
-    const div = document.createElement('div');
-    div.innerHTML = `<strong>${msg.user}:</strong> ${msg.text}`;
-    messages.appendChild(div);
-  });
-
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && input.value.trim() !== '') {
-      const messageText = input.value.trim();
-      const messageObj = { user: username, text: messageText };
-
-      const div = document.createElement('div');
-      div.innerHTML = `<strong>${username}:</strong> ${messageText}`;
-      messages.appendChild(div);
-
-      storedMessages.push(messageObj);
-      localStorage.setItem('chat_log', JSON.stringify(storedMessages));
-
-      input.value = '';
-      messages.scrollTop = messages.scrollHeight;
-    }
-  });
-</script>
 
 </body>
 </html>
