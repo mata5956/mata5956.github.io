@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fixes for Driver Initialization Error 1 & More</title>
+<style>
+  /* Base styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  details {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    background: #f9f9f9;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    outline: none;
+  }
+
+  details[open] {
+    background: #e6f7ff;
+    border-color: #91d5ff;
+  }
+
+  a {
+    color: #1890ff;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 8px 0;
+  }
+
+  .youtube-link {
+    display: inline-block;
+    margin: 8px 0 12px;
+  }
+
+  /* Chat container styles */
+  #chat-container {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    background: #fafafa;
+  }
+
+  #chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    background: #fff;
+  }
+
+  #chat-messages div {
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  #chat-messages .username {
+    font-weight: bold;
+    margin-right: 6px;
+  }
+
+  #chat-input-container {
+    display: flex;
+    padding: 10px;
+    background: #f0f0f0;
+  }
+
+  #chat-input {
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline-offset: 0;
+    outline-color: transparent;
+    transition: outline-color 0.2s ease-in-out;
+  }
+  #chat-input:focus {
+    outline-color: #1890ff;
+    border-color: #1890ff;
+  }
+
+  #send-btn {
+    background: #1890ff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  #send-btn:hover, #send-btn:focus {
+    background: #1070d0;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    #chat-container {
+      max-width: 100%;
+      height: 300px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>How to Fix “Driver Initialization Error 1” and Other Common Issues</h1>
+
+<!-- FAQ Section -->
+<section>
+  <details>
+    <summary>Driver initialization error 1 basic steps</summary>
+    <p>Press the “Get Support !” button on the loader.<br />
+    Then press 1.<br />
+    Then press 2.</p>
+  </details>
+
+  <details>
+    <summary>Video tutorial for joystick setup</summary>
+    <a class="youtube-link" href="https://www.youtube.com/watch?v=W1mY1WHebkA" target="_blank" rel="noopener noreferrer">
+      How to use Joysticks with AntiMicro Setup Tutorial - HIP Games (YouTube)
+    </a>
+  </details>
+
+  <details>
+    <summary>Battleye “found bad software” fix</summary>
+    <p>Open the task manager app on your pc from windows.</p>
+    <p>Press the arrow that gives you access to advanced options.</p>
+    <p>Scroll through and close all Rainbow Six Siege processes and all BattlEye processes.</p>
+    <p>Restart injection process from the beginning.<br />
+    Or just restart your pc.</p>
+  </details>
+
+  <details>
+    <summary>Loader closes after sign-in fix</summary>
+    <ul>
+      <li>Extract the file first</li>
+      <li>Run as Administrator</li>
+      <li>Antivirus OFF</li>
+      <li>Still closes? → Use VPN (like Cloudflare Warp)</li>
+      <li>Then try again</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>R6 Prime info</summary>
+    <p>When its r6 prime insert doesn't exist, the menu is webbased link in the guide.</p>
+  </details>
+
+  <details>
+    <summary>Refund store credit info</summary>
+    <p>That's only the refund store credit, you can't add money there.</p>
+  </details>
+
+  <details>
+    <summary>Fix Core Isolation & Memory Integrity issues</summary>
+    <p>Go into Core Isolation inside of Windows Security and disable memory integrity and Microsoft vulnerable driver blocklist.<br />
+    Then restart your PC and try injection.<br />
+    (This helps if “driver initialization error 1” crashes before injection.)</p>
+  </details>
+
+  <details>
+    <summary>Chairs false flagged by antivirus</summary>
+    <p>This is due to manipulating memory.<br />
+    If someone asks why cheat is flagged as virus, this is the reason.</p>
+  </details>
+
+  <details>
+    <summary>Fix EFI error</summary>
+    <p>Go to BIOS → switch to UEFI boot.<br />
+    You might need to reinstall Windows or try <code>mbr2gpt</code> if possible.</p>
+  </details>
+
+  <details>
+    <summary>No ESP showing fix</summary>
+    <p>Make sure game is on borderless mode.<br />
+    If still nothing, reinject the loader.</p>
+  </details>
+
+  <details>
+    <summary>Key not working? What to do</summary>
+    <p>tag maddy/arctic and tell them to wait after sending proof of purchase.</p>
+    <p>ask for the username on website</p>
+    <p>show proof the key not working</p>
+  </details>
+
+  <details>
+    <summary>MyLoader.cc web doesn't work</summary>
+    <p>Use <code>!warp</code> if possible.</p>
+  </details>
+
+  <details>
+    <summary>Enable Hyper-V</summary>
+    <ol>
+      <li>Search "Turn Windows features on or off"</li>
+      <li>Check Hyper-V (Management Tools + Platform)</li>
+      <li>Click OK and restart PC</li>
+    </ol>
+    <p>This fixes: Hypervisor not set up / error code 2</p>
+  </details>
+
+  <details>
+    <summary>Windows 10 Home lacks Hyper-V</summary>
+    <p>Upgrade to Pro or use VirtualBox/VMware instead.</p>
+  </details>
+
+  <details>
+    <summary>Is Hyper-V required for Arcane?</summary>
+    <p>Yes.</p>
+  </details>
+
+  <details>
+    <summary>Fix C++ redistributable issues</summary>
+    <p><a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170" target="_blank" rel="noopener noreferrer">Latest supported Visual C++ Redistributable downloads</a></p>
+  </details>
+
+  <details>
+    <summary>Cheats stopped working but menu shows</summary>
+    <p>!build (and provide the key)</p>
+  </details>
+
+  <details>
+    <summary>File flagged while downloading</summary>
+    <p>Use Microsoft Edge to download.<br />
+    After clicking the 3 dots on the download, find the file on downloads tab, click 3 dots next to the file, then click “Download suspicious file.”</p>
+  </details>
+
+  <details>
+    <summary>Uninstall problematic Windows updates</summary>
+    <p>Try uninstalling the latest Windows updates causing issues.<br />
+    If they keep reinstalling, consider clean installing Windows 10 for best compatibility.</p>
+  </details>
+
+  <details>
+    <summary>Prime Infinite loader issue</summary>
+    <p>If Prime Infinite loader page doesn’t load, use <code>!warp</code>.</p>
+  </details>
+
+  <details>
+    <summary>UEFI boot not available</summary>
+    <p>Change BIOS settings to UEFI boot.</p>
+  </details>
+
+  <details>
+    <summary>How to solve “Close BattlEye and start again” error</summary>
+    <p>Open the task manager app on your PC from Windows.<br />
+    Press the arrow that gives you access to advanced options.<br />
+    Scroll through and close all Rainbow Six Siege processes and all BattlEye processes.<br />
+    Restart injection process from the beginning.<br />
+    Or just restart your PC.</p>
+  </details>
+
+  <details>
+    <summary>How to Fix Inferno Crashing Issues</summary>
+    <p>Make sure your game is borderless. If it wasn’t restart injection process and try again.</p>
+    <p>If that doesn't work then disable virtualization via BIOS.</p>
+    <p>If this doesn’t work make sure your PC has secure boot off. (use !secureboot for a tutorial)</p>
+    <p>If none of this works run cmd as admin and run this command:<br />
+    <code>sfc /scannow</code><br />
+    After that, run the following command:<br />
+    <code>DISM /Online /Cleanup-Image /RestoreHealth</code>.</p>
+  </details>
+
+  <details>
+    <summary>This error unrelated to product — bo6 HILLCAT</summary>
+    <p>This error shouldn’t have anything to do with our product.<br />
+    Try following this YouTube guide to resolve it:<br />
+    <a href="https://youtu.be/48QCwGlD1c4?si=aV4xuYuUMoH16sHF" target="_blank" rel="noopener noreferrer">https://youtu.be/48QCwGlD1c4?si=aV4xuYuUMoH16sHF</a></p>
+  </details>
+
+  <details>
+    <summary>"failed to map memory"</summary>
+    <p>Disable all startup apps.<br />
+    If not working, check task manager, go to performance, and then send a screenshot of your memory tab.</p>
+  </details>
+
+  <details>
+    <summary>How to check if disk format is GPT or MBR:</summary>
+    <p>Open cmd prompt as admin.<br />
+    Type in <code>diskpart</code>.<br />
+    Then type in <code>list disk</code>.<br />
+    If there is an Asterisk (*) below GPT it means that the format is GPT, if empty it means MBR.<br />
+    (This is to see if the user can switch to UEFI mode.)</p>
+  </details>
+
+  <details>
+    <summary>Stuck on getting session data on the menu (r6 prime)</summary>
+    <p>Use <code>!supporttool</code>.<br />
+    Then restart PC and reinject.</p>
+  </details>
+
+  <details>
+    <summary>How to force enable virtualization - by the legend klaus</summary>
+    <p>1) Make sure virtualization is enabled in BIOS.<br />
+    2) Press Win + R and then type in <code>msinfo32</code> and look at the virtualization state.</p>
+    <p>3) Win + R, type in <code>gpedit.msc</code>, go to Computer config → Administrative templates → System → Device Guard → Double click on "Turn on virtualization based security" and enable it.</p>
+    <p>4) Open regedit (as admin) → <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard</code>, double click "EnableVirtualization" and set the value to 1.</p>
+    <p>5) Restart PC and everything should work.</p>
+  </details>
+
+  <details>
+    <summary>Omega Apex – "Failed to map memory(0)" Fix</summary>
+    <p>Disable all Startup Apps.</p>
+    <p>Restart PC.</p>
+    <p>Open Task Manager → Make sure RAM usage is under ~30% idle.</p>
+    <p>If idle RAM is too high (like 50%+), close background apps or upgrade RAM (12GB is minimum; 8GB usually causes issues).</p>
+    <p>Reinject after full reboot with nothing else running.</p>
+  </details>
+
+  <details>
+    <summary>Game crashes with Inferno</summary>
+    <p>Make sure to first disable gadget ESP, see if that works.</p>
+    <p>Make sure your game is borderless. If it wasn’t restart injection process and try again.</p>
+    <p>If that doesn't work do the following:<br />
+    Run CMD as admin.<br />
+    Paste this command:<br />
+    <code>bcdedit /set hypervisorlaunchtype off</code><br />
+    Restart your PC and try again.</p>
+    <p>If this doesn’t work make sure your PC has secure boot off. (use !secureboot for a tutorial)</p>
+    <p>If that doesn't work disable your virtualization. (use !virtualization for a tutorial)</p>
+    <p>If none of this works run CMD as admin and run:<br />
+    <code>sfc /scannow</code><br />
+    Then:<br />
+    <code>DISM /Online /Cleanup-Image /RestoreHealth</code></p>
+  </details>
+
+  <details>
+    <summary>Kernaim Menu Not Clickable – Fix</summary>
+    <p>100% Working Fix Steps:<br />
+    <ol>
+    <li><strong>Ensure Proper Display Mode:</strong><br />
+      Set the game to <em>Windowed Borderless</em>, not Fullscreen.
+    </li>
+    <li><strong>Disable Windows Defender Completely:</strong><br />
+      Follow both Step 1 & 2 from this guide: 
+      <a href="https://ash-carpenter-638.notion.site/How-to-disable-Windows-Defender-guide-13678f2021f68054b273dfc260ff6a70" target="_blank" rel="noopener noreferrer">Disable Defender Guide</a><br />
+      Use <a href="https://gofile.io/d/nWnp0K" target="_blank" rel="noopener noreferrer">Defender Control Tool</a> to help.
+    </li>
+    <li><strong>Turn Off Overlays:</strong><br />
+      Disable Discord overlay, Steam overlay, and NVIDIA/AMD overlays (via respective apps).
+    </li>
+    <li><strong>Turn Off System Features:</strong>
+      <ul>
+        <li>GPU Acceleration</li>
+        <li>Xbox Game Bar</li>
+        <li>Windows Game Mode</li>
+        <li>Core Isolation &gt; Memory Integrity</li>
+        <li>Secure Boot (via BIOS)</li>
+        <li><a href="https://help.uaudio.com/hc/en-us/articles/213195423-How-To-Disable-Fast-Startup-on-Windows-10" target="_blank" rel="noopener noreferrer">Fast Startup (Disable Fast Startup)</a></li>
+      </ul>
+    </li>
+    <li><strong>Update Drivers & Windows:</strong><br />
+      Update GPU drivers.<br />
+      Make sure Windows is fully updated.
+    </li>
+  </ol>
+  <p><strong>Finally:</strong> Reboot your PC after doing all of the above and try launching the loader again.</p>
+  </details>
+</section>
+
+<!-- Chat Section -->
+<section id="chat-container" aria-label="User chat">
+  <div id="chat-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+  <form id="chat-form" aria-label="Send a chat message">
+    <input type="text" id="chat-input" autocomplete="off" placeholder="Type your message here" aria-required="true" />
+    <button type="submit" id="send-btn" aria-label="Send message">Send</button>
+  </form>
+</section>
+
+<script>
+  // Ask for username on page load or get from localStorage
+  let username = localStorage.getItem('username');
+  if (!username) {
+    username = prompt("Enter your username for chat:");
+    if (!username || username.trim() === "") {
+      username = "Anonymous";
+    }
+    localStorage.setItem('username', username);
+  }
+
+  // Elements
+  const chatMessages = document.getElementById('chat-messages');
+  const chatForm = document.getElementById('chat-form');
+  const chatInput = document.getElementById('chat-input');
+
+  // Load chat history from localStorage (simulate multi-user chat for demo)
+  let chatHistory = JSON.parse(localStorage.getItem('chatHistory') || "[]");
+  renderChat();
+
+  // Scroll chat to bottom
+  function scrollChatToBottom() {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Render chat messages
+  function renderChat() {
+    chatMessages.innerHTML = "";
+    chatHistory.forEach(({user, message, time}) => {
+      const msgDiv = document.createElement("div");
+      const timeString = new Date(time).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+      msgDiv.innerHTML = `<span class="username">${escapeHtml(user)}</span><span class="time">[${timeString}]</span>: ${escapeHtml(message)}`;
+      chatMessages.appendChild(msgDiv);
+    });
+    scrollChatToBottom();
+  }
+
+  // Escape HTML to avoid XSS
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Handle form submit
+  chatForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    const newMsg = { user: username, message: msg, time: Date.now() };
+    chatHistory.push(newMsg);
+    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    renderChat();
+    chatInput.value = "";
+    chatInput.focus();
+  });
+
+  // Optional: Clear chat history button (for dev/debug)
+  // You can add a button and handler if you want to reset chat history.
+</script>
+
+</body>
+</html>
